@@ -15,6 +15,7 @@ import fs from 'fs';
 import { PromisePool } from '@supercharge/promise-pool';
 import { loadCache, saveCache } from '../helpers/cache';
 import { arweaveUpload } from '../helpers/upload/arweave';
+import { customUpload } from '../helpers/upload/custom';
 import {
   makeArweaveBundleUploadGenerator,
   withdraw_bundlr,
@@ -303,6 +304,12 @@ export async function uploadV2({
                   awsS3Bucket,
                   image,
                   animation,
+                  manifestBuffer,
+                );
+                break;
+              case StorageType.Custom:
+                [link, imageLink] = await customUpload(
+                  image,
                   manifestBuffer,
                 );
                 break;
