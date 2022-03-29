@@ -37,3 +37,5 @@ js/packages/candy-machine-ui/.env
 traits
 traits-configuration.json
 js/packages/cli/test/assets
+js/packages/cli/niftyrecords-assets/blockchain
+js/packages/cli/niftyrecords-assets/server
