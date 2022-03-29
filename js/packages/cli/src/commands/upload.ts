@@ -311,6 +311,7 @@ export async function uploadV2({
                 [link, imageLink] = await customUpload(
                   image,
                   manifestBuffer,
+                  asset.index,
                 );
                 break;
               case StorageType.Arweave:
