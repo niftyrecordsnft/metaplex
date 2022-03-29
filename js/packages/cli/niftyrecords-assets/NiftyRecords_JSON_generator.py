@@ -4,9 +4,8 @@ import random
 import iso8601
 import shutil
 
-numberOfFiles = 10
-# /Users/willmero/.config/solana/NiftyRecords_DevNetDeploy1.json
-creatorAddress = "9ifxZqGBXBuTRSpiHxfuzapyrP2KLLGyeRLuEoGbwrde"
+numberOfFiles = 1000
+creatorAddress = "BjLKxBKRUjFX3WyfyTcTtotC5TfRaPJgVjEeMn1MuzPd"
 
 # Build Blockchain JSON
 for x in range(numberOfFiles):
@@ -15,7 +14,7 @@ for x in range(numberOfFiles):
     niftyRecordNFTData = {
         "name" : "NiftyRecord #" + str(nftNumber),
         "symbol": "NFRC",
-        "uri" : "https://assets.niftyrecordsnft.com/niftyrecords/" + str(nftNumber) + "/" + str(nftNumber) + "-metadata.json",
+        "uri" : "https://assets.niftyrecordsnft.com/niftyrecords/" + str(nftNumber) + "/NiftyRecord-" + str(nftNumber) + ".json",
         "image": "https://assets.niftyrecordsnft.com/niftyrecords/" + str(nftNumber) + "/NiftyRecord-" + str(nftNumber) + ".png",
         "properties": {
             "files": [
@@ -173,7 +172,7 @@ for x in range(numberOfFiles):
         "revealAfter": iso8601.parse_date(thisSleeve["revealDate"]).timestamp()
     }
 
-    fileName = 'server/' + str(nftNumber) + "/" + str(nftNumber) + '-metadata.json'
+    fileName = 'server/' + str(nftNumber) + "/NiftyRecord-" + str(nftNumber) + '.json'
     os.makedirs(os.path.dirname(fileName), exist_ok=True)
 
     # When generating server-JSON
